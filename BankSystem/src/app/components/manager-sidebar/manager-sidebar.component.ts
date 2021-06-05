@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagerSidebarComponent implements OnInit {
 
+
   menuItems = [
     { text: 'Clients', src: '/Clients' },
     { text: 'Reports', src: '/Reports' },

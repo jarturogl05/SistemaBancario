@@ -1,25 +1,29 @@
 <div
   class="
-    bg-blue-500
+    bg-blue-600
     hidden
     max-h-screen
     min-h-screen
     md:flex
     flex-col
-    place-content-evenly
+    place-content-between
   "
 >
+  <div class="flex flex-col place-items-center mt-10">
+    <img src="../../../assets/images/bank.png" class="h-28 w-28" />
+    <h1 class="text-3xl text-white mt-5">Bank</h1>
+  </div>
 
   <ul class="block">
     <li *ngFor="let item of menuItems" class="font-bold cursor-pointer">
       <a
-        href={{item.src}}
+        href="{{ item.src }}"
         class="
           block
           text-2xl text-white
           px-7
           py-5
-          hover:bg-blue-700
+          hover:bg-blue-800
           transition
           duration-200
         "
@@ -28,4 +32,21 @@
       </a>
     </li>
   </ul>
+
+  <button
+    class="
+      py-8
+      bg-blue-500
+      text-2xl text-white
+      hover:bg-blue-800
+      transition
+      duration-200
+      border
+      border-white
+      border-r-0
+      border-l-0
+    "
+  >
+    Log Out
+  </button>
 </div>
