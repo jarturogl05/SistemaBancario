@@ -1,32 +1,19 @@
 <div class="my-20 text-2xl">
-    <form>
-      <label class="text-2xl pr-24 font-semibold" for="client"
-        >Search Client</label
-      >
-      <select name="select" class="border border-gray-400">
-        <option value="id">Search by client id</option>
-        <option value="name">Search by name</option>
-      </select>
-      <input
-        type="search"
-        id="client"
-        class="
-          ipt
-          
-        "
-      />
+  <form [formGroup]="searchForm" (submit)="send">
+    <label class="text-2xl pr-24 font-semibold" for="client"
+      >Search Client</label
+    >
+    <select name="select" class="border border-gray-400">
+      <option value="id">Search by client id</option>
+      <option value="name">Search by name</option>
+    </select>
+    <input type="search" id="client" class="ipt" />
 
-      <button
-        type="submit"
-        class="
-          btn
-          bg-blue-500
-          hover:bg-blue-700
-          mr-5
-        "
-      >
-        Search 
-      </button>
-      <button type="button" class="btn bg-green-500 hover:bg-green-700">New Client</button>
-    </form>
-  </div>
+    <button type="submit" class="btn bg-blue-500 hover:bg-blue-700 mr-5">
+      Search
+    </button>
+    <a routerLink="/addClient" class="btn bg-green-500 hover:bg-green-700"
+      >New Client</a
+    >
+  </form>
+</div>

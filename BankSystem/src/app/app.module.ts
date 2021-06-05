@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { ManagerClientsComponent } from './pages/manager-clients/manager-clients
 import { ReportsComponent } from './pages/reports/reports.component';
 import { ConfigComponent } from './pages/config/config.component';
 import { SearchClientComponent } from './components/search-client/search-client.component';
+import { NewClientFormComponent } from './components/new-client-form/new-client-form.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,13 @@ import { SearchClientComponent } from './components/search-client/search-client.
     ManagerClientsComponent,
     ReportsComponent,
     ConfigComponent,
-    SearchClientComponent
+    SearchClientComponent,
+    NewClientFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
