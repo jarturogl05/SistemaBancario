@@ -3,13 +3,17 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-manager-sidebar',
   templateUrl: './manager-sidebar.component.html',
-  styleUrls: ['./manager-sidebar.component.css']
+  styleUrls: ['./manager-sidebar.component.css'],
 })
 export class ManagerSidebarComponent implements OnInit {
 
-  constructor() { }
+  menuItems = [
+    { text: 'Clients', src: '/Clients' },
+    { text: 'Reports', src: '/Reports' },
+    { text: 'Config', src: '/Config' },
+  ];
 
-  ngOnInit(): void {
-  }
+  constructor() {}
 
+  ngOnInit(): void {}
 }

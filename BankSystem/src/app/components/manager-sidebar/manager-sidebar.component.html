@@ -1,1 +1,31 @@
-<p>manager-sidebar works!</p>
+<div
+  class="
+    bg-blue-500
+    hidden
+    max-h-screen
+    min-h-screen
+    md:flex
+    flex-col
+    place-content-evenly
+  "
+>
+
+  <ul class="block">
+    <li *ngFor="let item of menuItems" class="font-bold cursor-pointer">
+      <a
+        href={{item.src}}
+        class="
+          block
+          text-2xl text-white
+          px-7
+          py-5
+          hover:bg-blue-700
+          transition
+          duration-200
+        "
+      >
+        {{ item.text }}
+      </a>
+    </li>
+  </ul>
+</div>
