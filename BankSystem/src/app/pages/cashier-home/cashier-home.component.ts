@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CashierHomeComponent implements OnInit {
 
+  menuItems = [
+    { text: 'Withdrawal', src: '/withdrawal' },
+    { text: 'Deposit', src: '/deposit' },
+    { text: 'monthly payment', src: '/monthlyPayment' }
+
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

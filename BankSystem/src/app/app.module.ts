@@ -4,17 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ManagerHomeComponent } from './pages/manager-home/manager-home.component';
-import { ManagerSidebarComponent } from './components/manager-sidebar/manager-sidebar.component';
-import { CashierSidebarComponent } from './components/cashier-sidebar/cashier-sidebar.component';
 import { CashierHomeComponent } from './pages/cashier-home/cashier-home.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ManagerHomeComponent,
-    ManagerSidebarComponent,
-    CashierSidebarComponent,
-    CashierHomeComponent
+    CashierHomeComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

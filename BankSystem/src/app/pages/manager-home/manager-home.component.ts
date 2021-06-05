@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagerHomeComponent implements OnInit {
 
+  menuItems = [
+    { text: 'Clients', src: '/Clients' },
+    { text: 'Reports', src: '/Reports' },
+    { text: 'Config', src: '/Config' },
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
