@@ -1,6 +1,6 @@
 <div
   class="
-    bg-blue-600
+    bg-blue-500
     hidden
     max-h-screen
     min-h-screen
@@ -17,7 +17,7 @@
   <ul class="block">
     <li *ngFor="let item of menuItems" class="font-bold cursor-pointer">
       <a
-        href="{{ item.src }}"
+        routerLink="{{ item.src }}"
         class="
           block
           text-2xl text-white
@@ -26,6 +26,7 @@
           hover:bg-blue-800
           transition
           duration-200
+          
         "
       >
         {{ item.text }}
