@@ -1,3 +1,20 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.btn {
+  @apply px-3 py-2 text-white font-bold rounded  text-xl cursor-pointer tracking-wider;
+}
+
+.ipt {
+  @apply shadow
+    appearance-none
+    border
+    rounded
+    border-gray-400
+    mx-5
+    px-3
+    text-gray-700
+    leading-tight
+    focus:shadow-lg
+}
