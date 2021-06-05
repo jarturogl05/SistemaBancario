@@ -11,6 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ManagerClientsComponent } from './pages/manager-clients/manager-clients.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { ConfigComponent } from './pages/config/config.component';
+import { SearchClientComponent } from './components/search-client/search-client.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ConfigComponent } from './pages/config/config.component';
     HomeComponent,
     ManagerClientsComponent,
     ReportsComponent,
-    ConfigComponent
+    ConfigComponent,
+    SearchClientComponent
   ],
   imports: [
     BrowserModule,
