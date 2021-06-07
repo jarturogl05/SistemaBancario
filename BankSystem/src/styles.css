@@ -18,3 +18,8 @@
     leading-tight
     focus:shadow-lg
 }
+
+
+.formLabel{
+  @apply text-2xl pr-24 font-semibold block w-1/3
+}
