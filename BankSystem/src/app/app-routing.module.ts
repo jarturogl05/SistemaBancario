@@ -1,3 +1,4 @@
+import { ManagerBankAccountComponent } from './pages/manager-bank-account/manager-bank-account.component';
 import { ConfigComponent } from './pages/config/config.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { ManagerClientsComponent } from './pages/manager-clients/manager-clients.component';
@@ -9,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {path: 'addClient', component: NewClientComponent},
   {path: 'ManagerClients', component: ManagerClientsComponent},
+  {path: 'AddBankaccount', component: ManagerBankAccountComponent},
   {path: 'Reports', component: ReportsComponent},
   {path: 'Config', component: ConfigComponent},
 

@@ -1,1 +1,23 @@
-<p>manager-client-list works!</p>
+<div>
+    <table class="table-auto">
+        <thead>
+            <tr>
+                <th>Client number</th>
+                <th>Name</th>
+                <th>options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of clientList">
+                <td>{{client.numClient}}</td>
+                <td>{{client.name}}</td>
+                <td>
+                    <div>
+                        <a routerLink="/AddBankaccount"  class="btn bg-green-500">New bank account</a>
+                    </div>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>

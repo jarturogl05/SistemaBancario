@@ -15,6 +15,8 @@ import { ConfigComponent } from './pages/config/config.component';
 import { SearchClientComponent } from './components/search-client/search-client.component';
 import { NewClientFormComponent } from './components/new-client-form/new-client-form.component';
 import { ManagerClientListComponent } from './components/manager-client-list/manager-client-list.component';
+import { ManagerBankAccountComponent } from './pages/manager-bank-account/manager-bank-account.component';
+import { NewBankAccountFormComponent } from './components/new-bank-account-form/new-bank-account-form.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ManagerClientListComponent } from './components/manager-client-list/man
     ConfigComponent,
     SearchClientComponent,
     NewClientFormComponent,
-    ManagerClientListComponent
+    ManagerClientListComponent,
+    ManagerBankAccountComponent,
+    NewBankAccountFormComponent
   ],
   imports: [
     BrowserModule,
