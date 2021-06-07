@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewClientComponent implements OnInit {
 
+  formResponse:boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  checkFormStatus(status: boolean){
+    this.formResponse = status
+
+  }
 }
