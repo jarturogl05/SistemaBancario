@@ -14,6 +14,7 @@ import { ReportsComponent } from './pages/reports/reports.component';
 import { ConfigComponent } from './pages/config/config.component';
 import { SearchClientComponent } from './components/search-client/search-client.component';
 import { NewClientFormComponent } from './components/new-client-form/new-client-form.component';
+import { ManagerClientListComponent } from './components/manager-client-list/manager-client-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NewClientFormComponent } from './components/new-client-form/new-client-
     ReportsComponent,
     ConfigComponent,
     SearchClientComponent,
-    NewClientFormComponent
+    NewClientFormComponent,
+    ManagerClientListComponent
   ],
   imports: [
     BrowserModule,
