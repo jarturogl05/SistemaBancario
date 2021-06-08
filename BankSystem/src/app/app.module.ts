@@ -17,6 +17,8 @@ import { NewClientFormComponent } from './components/new-client-form/new-client-
 import { ManagerClientListComponent } from './components/manager-client-list/manager-client-list.component';
 import { ManagerBankAccountComponent } from './pages/manager-bank-account/manager-bank-account.component';
 import { NewBankAccountFormComponent } from './components/new-bank-account-form/new-bank-account-form.component';
+import { CashierWithdrawalComponent } from './pages/cashier-withdrawal/cashier-withdrawal.component';
+import { CashierSearchClientComponent } from './components/cashier-search-client/cashier-search-client.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { NewBankAccountFormComponent } from './components/new-bank-account-form/
     NewClientFormComponent,
     ManagerClientListComponent,
     ManagerBankAccountComponent,
-    NewBankAccountFormComponent
+    NewBankAccountFormComponent,
+    CashierWithdrawalComponent,
+    CashierSearchClientComponent
   ],
   imports: [
     BrowserModule,

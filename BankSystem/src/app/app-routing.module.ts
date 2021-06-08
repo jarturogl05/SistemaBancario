@@ -1,3 +1,4 @@
+import { CashierWithdrawalComponent } from './pages/cashier-withdrawal/cashier-withdrawal.component';
 import { ManagerBankAccountComponent } from './pages/manager-bank-account/manager-bank-account.component';
 import { ConfigComponent } from './pages/config/config.component';
 import { ReportsComponent } from './pages/reports/reports.component';
@@ -13,6 +14,8 @@ const routes: Routes = [
   {path: 'AddBankaccount', component: ManagerBankAccountComponent},
   {path: 'Reports', component: ReportsComponent},
   {path: 'Config', component: ConfigComponent},
+  {path: 'Withdrawal', component: CashierWithdrawalComponent},
+
 
 ];
 
