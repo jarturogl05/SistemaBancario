@@ -6,6 +6,11 @@
   @apply px-3 py-2 text-white font-bold rounded  text-xl cursor-pointer tracking-wider;
 }
 
+.tablebtn {
+  @apply px-3 py-2 text-white font-bold rounded  text-base cursor-pointer tracking-wider;
+}
+
+
 .ipt {
   @apply shadow
     appearance-none

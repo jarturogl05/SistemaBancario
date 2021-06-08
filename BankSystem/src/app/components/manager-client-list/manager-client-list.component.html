@@ -1,19 +1,19 @@
 <div>
     <table class="table-auto">
         <thead>
-            <tr>
+            <tr class='text-4xl font-light '>
                 <th>Client number</th>
                 <th>Name</th>
-                <th>options</th>
+                <th>Options</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let client of clientList">
-                <td>{{client.numClient}}</td>
-                <td>{{client.name}}</td>
+                <td class="pr-60 py-10">{{client.numClient}}</td>
+                <td class="pr-60 py-10">{{client.name}}</td>
                 <td>
                     <div>
-                        <a routerLink="/AddBankaccount"  class="btn bg-green-500">New bank account</a>
+                        <a routerLink="/AddBankaccount"  class="tablebtn bg-green-500 pr-60 py-10">New Account</a>
                     </div>
                 </td>
             </tr>
