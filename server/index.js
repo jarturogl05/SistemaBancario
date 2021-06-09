@@ -1,11 +1,13 @@
 const express = require('express')
-const app = express();
-require('dotenv').config()
 const sequelize = require('./database/db');
+const routes = require('./routes');
+const dotenv = require('dotenv');
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-});
+const app = express();
+
+
+dotenv.config();
+app.use(routes);
 
 
 const port = process.env.PORT;
