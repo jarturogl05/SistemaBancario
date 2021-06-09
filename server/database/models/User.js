@@ -3,8 +3,8 @@ const sequelize = require('../db');
 
 class User extends Model {}
 User.init({
-    username:{
-       type: DataTypes.STRING,
+    userid:{
+       type: DataTypes.INTEGER,
        primaryKey: true   
     },
     password: DataTypes.STRING,

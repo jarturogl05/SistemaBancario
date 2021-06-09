@@ -3,12 +3,12 @@ const sequelize = require('../db');
 
 class MonthlyPayment extends Model {}
 MonthlyPayment.init({
-    amount: DataTypes.NUMBER,
+    amount: DataTypes.DOUBLE,
     limitDate: DataTypes.DATEONLY,
     dateRange: DataTypes.RANGE(sequelize.DATEONLY),
     isPaid:{
         type: DataTypes.BOOLEAN,
-        defaultValue: 0
+        defaultValue: false
     }
 },{
     sequelize,

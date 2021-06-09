@@ -2,16 +2,16 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
 class Client extends Model {}
-User.init({
+Client.init({
     clientNumber:{
-       type: DataTypes.NUMBER,
+       type: DataTypes.INTEGER,
        primaryKey: true   
     },
     fullname: DataTypes.STRING,
     address: DataTypes.STRING,
     isOverdue: {
         type: DataTypes.BOOLEAN,
-        defaultValue: 0
+        defaultValue: false
     }
 
 },{

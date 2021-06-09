@@ -4,14 +4,14 @@ const sequelize = require('../db');
 class BankAccount extends Model{}
 BankAccount.init({
     banckAccountNumber:{
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
         primaryKey: true
     },
-    maxCredit: DataTypes.NUMBER,
-    currentCredit: DataTypes.NUMBER,
+    maxCredit: DataTypes.DOUBLE,
+    currentCredit: DataTypes.DOUBLE,
     hasLatePayment:{
         type: DataTypes.BOOLEAN,
-        defaultValue: 0
+        defaultValue: false
     }
 },{
     sequelize,
