@@ -1,11 +1,14 @@
-const express = require('express');
-
+const User = require('../database/models/User')
 
 
 
 const login = async(req, res) => {
-     res.status(200).send({message: "send"});
+
+   
+     
+     res.json(user);
 }
+
 
 
 module.exports = {login}
