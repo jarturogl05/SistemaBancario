@@ -3,17 +3,16 @@ const BankAccount = require("./models/BankAccount");
 const MonthlyPayment = require("./models/MonthlyPayment");
 const Movement = require("./models/Movement");
 
-Client.hasMany(BankAccount, { 
-    as: "Accounts", 
-    foreignKey: "clientNumber" 
-});
+Client.hasMany(BankAccount);
 
-BankAccount.hasMany(Movement, {
-  as: "Movements",
-  foreignKey: "bankAccountNumber",
-});
+BankAccount.belongsTo(Client)
 
-BankAccount.hasMany(MonthlyPayment, {
-  as: "MonthlyPayment",
-  foreignKey: "banckAccountNumber",
-});
+BankAccount.hasMany(Movement);
+
+Movement.belongsTo(BankAccount)
+
+BankAccount.hasMany(MonthlyPayment);
+
+MonthlyPayment.belongsTo(BankAccount);
+
+
