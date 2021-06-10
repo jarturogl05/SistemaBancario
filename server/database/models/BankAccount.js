@@ -3,7 +3,7 @@ const sequelize = require('../db');
 
 class BankAccount extends Model{}
 BankAccount.init({
-    banckAccountNumber:{
+    bankAccountNumber:{
         type: DataTypes.INTEGER,
         primaryKey: true
     },
