@@ -3,8 +3,8 @@ const sequelize = require('../db');
 
 class Movement extends Model {}
 Movement.init({
-    date: DataTypes.DATE,
-    amount: DataTypes.DOUBLE
+    amount: DataTypes.DOUBLE,
+    type: DataTypes.STRING
 },{
     sequelize,
     modelName: "movement"
