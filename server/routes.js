@@ -17,4 +17,6 @@ router.get('/getAccount/:clientNumber', bankAccountController.getAccountsByClien
 
 
 router.post('/createWithdrawal', movementController.createWithdrawal);
+router.get('/movements/:bankNumber' , movementController.getMovementByBankAccount);
+
 module.exports = router
