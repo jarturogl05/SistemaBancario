@@ -14,10 +14,22 @@ const getAccounts = async (req, res) => {
   res.status(200).send(result);
 };
 
+const getAccountsByClientNum = async (req, res) =>{
+
+  clientNumber = req.params.clientNumber;
+
+  const result = await BankAccount.findAll({
+    attributes:['bankAccountNumber', 'maxCredit', 'currentCredit', 'hasLatePayment'],
+    where:{
+      clientClientNumber: clientNumber
+    }
+  });
+  res.status(200).send(result);
+}
+
 const createBankAccount = async (req, res) => {
   const { maxCredit, clientClientNumber } = req.body;
 
-  console.log('ssssss',clientClientNumber);
   const bankAccountNumber = await generateBankAccountNumber();
   try {
     await BankAccount.create({
@@ -40,4 +52,4 @@ async function generateBankAccountNumber() {
   return (id + digits).toString();
 }
 
-module.exports = { createBankAccount, getAccounts };
+module.exports = { createBankAccount, getAccounts, getAccountsByClientNum };
