@@ -7,7 +7,8 @@ const bankAccountController = require('./controllers/bankAccount-controller');
 
 router.get('/login', userController.login)
 
-router.post('/createClient', clienController.createClient)
+router.post('/createClient', clienController.createClient);
+router.get('/getClient/:clientNumber', clienController.getClientByNumber);
 
 router.post('/createAccount', bankAccountController.createBankAccount)
 router.get('/getAccounts', bankAccountController.getAccounts );
