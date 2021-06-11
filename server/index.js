@@ -6,7 +6,10 @@ require('./database/associations');
 const app = express();
 
 
+
 dotenv.config();
+app.use(express.json());
+
 app.use(routes);
 
 
