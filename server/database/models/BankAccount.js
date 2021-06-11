@@ -4,7 +4,7 @@ const sequelize = require('../db');
 class BankAccount extends Model{}
 BankAccount.init({
     bankAccountNumber:{
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         primaryKey: true
     },
     maxCredit: DataTypes.DOUBLE,

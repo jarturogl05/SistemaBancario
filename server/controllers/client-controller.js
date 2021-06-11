@@ -30,13 +30,13 @@ const createClient = async(req, res) =>{
 
          await sequelize.transaction(async (t) => {
             
-            const client = await Client.create({
+            await Client.create({
                 clientNumber,
                 fullname,
                 address
             }, {transaction: t});
 
-           const user = await User.create({
+           await User.create({
                userid: clientNumber,
                password: hash,
                role: 'client'
@@ -60,7 +60,7 @@ const createClient = async(req, res) =>{
 async function generateClientId(){
     id = ID.generate(new Date().toJSON()) 
     const digits = Math.floor(Math.random()*(999-100+1)+100);
-    return id + digits;
+    return (id + digits).toString();
 }   
 
 

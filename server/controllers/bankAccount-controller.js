@@ -1,31 +1,43 @@
-const sequelize = require('../database/db');
-const BankAccount = require('../database/models/BankAccount')
-const Client = require('../database/models/Client');
+const sequelize = require("../database/db");
+const BankAccount = require("../database/models/BankAccount");
+const Client = require("../database/models/Client");
+const ID = require("nodejs-unique-numeric-id-generator")
 
 
 const getAccounts = async (req, res) => {
-    const result = await BankAccount.findAll({
-        include:{
-            model: Client,
-            attributes: ['fullname', 'address']
-        }
-    });
-    res.status(200).send(result)
-}
-
-const createBankAccount = async (req, res) => {
-  const bankAccount = await BankAccount.create(
-    {
-      bankAccountNumber: 12345,
-      maxCredit: 20.12,
-      currentCredit: 12.23,
-      clientClientNumber: 2281244,
+  const result = await BankAccount.findAll({
+    include: {
+      model: Client,
+      attributes: ["fullname", "address"],
     },
-  );
-
-  res.status(200).send(bankAccount)
-
+  });
+  res.status(200).send(result);
 };
 
+const createBankAccount = async (req, res) => {
+  const { maxCredit, clientClientNumber } = req.body;
 
-module.exports = {createBankAccount, getAccounts}
+  console.log('ssssss',clientClientNumber);
+  const bankAccountNumber = await generateBankAccountNumber();
+  try {
+    await BankAccount.create({
+      bankAccountNumber,
+      maxCredit,
+      currentCredit: maxCredit,
+      clientClientNumber,
+    });
+
+    res.status(200).send({bankAccountNumber, maxCredit});
+  } catch (e) {
+    console.log(e);
+    res.status(400).send("error");
+  }
+};
+
+async function generateBankAccountNumber() {
+  id = ID.generate(new Date().toJSON());
+  const digits = Math.floor(100000 + Math.random() * 900000);
+  return (id + digits).toString();
+}
+
+module.exports = { createBankAccount, getAccounts };
