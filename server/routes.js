@@ -20,7 +20,7 @@ router.get('/getAccounts', bankAccountController.getAccounts );
 router.get('/getAccount/:clientNumber', bankAccountController.getAccountsByClientNum);
 router.post('/latePaymentStatusToTrue', bankAccountController.LatePaymentStatusToTrue);
 router.post('/latePaymentStatusToFalse', bankAccountController.LatePaymentStatusToFalse);
-
+router.get('/latepaymentreport/:startDate/:finishDate', bankAccountController.latePaymentReport)
 
 router.post('/createWithdrawal', movementController.createWithdrawal);
 router.get('/movements/:bankNumber' , movementController.getMovementByBankAccount);

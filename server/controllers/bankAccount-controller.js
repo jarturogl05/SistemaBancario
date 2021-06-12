@@ -1,7 +1,8 @@
 const sequelize = require("../database/db");
 const BankAccount = require("../database/models/BankAccount");
 const Client = require("../database/models/Client");
-const ID = require("nodejs-unique-numeric-id-generator")
+const ID = require("nodejs-unique-numeric-id-generator");
+const { Op } = require("sequelize");
 
 
 const getAccounts = async (req, res) => {
@@ -90,7 +91,23 @@ const LatePaymentStatusToFalse = async(req, res) =>{
 
   }
 
-} 
+}
+
+const latePaymentReport = async(req, res) => {
+
+  const {startDate, finishDate} = req.params;
+  console.log(req.params)
+  const result = await BankAccount.findAll({
+    attributes:['bankAccountNumber', 'maxCredit', 'currentCredit', 'hasLatePayment'],
+    where:{
+      hasLatePayment:true,
+      createdAt:{
+        [Op.between]: [startDate, finishDate]
+      }
+    }
+  })
+  res.status(200).send(result)
+}
 
 
 async function generateBankAccountNumber() {
@@ -99,4 +116,4 @@ async function generateBankAccountNumber() {
   return (id + digits).toString();
 }
 
-module.exports = { createBankAccount, getAccounts, getAccountsByClientNum, LatePaymentStatusToFalse, LatePaymentStatusToTrue };
+module.exports = { createBankAccount, getAccounts, getAccountsByClientNum, LatePaymentStatusToFalse, LatePaymentStatusToTrue, latePaymentReport };
