@@ -96,7 +96,6 @@ const LatePaymentStatusToFalse = async(req, res) =>{
 const latePaymentReport = async(req, res) => {
 
   const {startDate, finishDate} = req.params;
-  console.log(req.params)
   const result = await BankAccount.findAll({
     attributes:['bankAccountNumber', 'maxCredit', 'currentCredit', 'hasLatePayment'],
     where:{

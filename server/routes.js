@@ -24,5 +24,6 @@ router.get('/latepaymentreport/:startDate/:finishDate', bankAccountController.la
 
 router.post('/createWithdrawal', movementController.createWithdrawal);
 router.get('/movements/:bankNumber' , movementController.getMovementByBankAccount);
+router.get('/movementReport/:startDate/:finishDate', movementController.movementReport);
 
 module.exports = router
