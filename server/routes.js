@@ -14,6 +14,8 @@ router.get('/getClient/:clientNumber', clienController.getClientByNumber);
 router.post('/createAccount', bankAccountController.createBankAccount)
 router.get('/getAccounts', bankAccountController.getAccounts );
 router.get('/getAccount/:clientNumber', bankAccountController.getAccountsByClientNum);
+router.post('/LatePaymentStatusToTrue', bankAccountController.LatePaymentStatusToTrue);
+router.post('/LatePaymentStatusToFalse', bankAccountController.LatePaymentStatusToFalse);
 
 
 router.post('/createWithdrawal', movementController.createWithdrawal);
