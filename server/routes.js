@@ -10,12 +10,16 @@ router.get('/login', userController.login)
 
 router.post('/createClient', clienController.createClient);
 router.get('/getClient/:clientNumber', clienController.getClientByNumber);
+router.post('/overdueStatusToTrue', clienController.overdueStatusToTrue);
+router.post('/overdueStatusToFalse', clienController.overdueStatusToFalse);
+
+
 
 router.post('/createAccount', bankAccountController.createBankAccount)
 router.get('/getAccounts', bankAccountController.getAccounts );
 router.get('/getAccount/:clientNumber', bankAccountController.getAccountsByClientNum);
-router.post('/LatePaymentStatusToTrue', bankAccountController.LatePaymentStatusToTrue);
-router.post('/LatePaymentStatusToFalse', bankAccountController.LatePaymentStatusToFalse);
+router.post('/latePaymentStatusToTrue', bankAccountController.LatePaymentStatusToTrue);
+router.post('/latePaymentStatusToFalse', bankAccountController.LatePaymentStatusToFalse);
 
 
 router.post('/createWithdrawal', movementController.createWithdrawal);

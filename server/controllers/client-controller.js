@@ -53,7 +53,52 @@ const createClient = async(req, res) =>{
     }
 };
 
+const overdueStatusToTrue = async(req, res) => {
 
+
+    const {clientNumber} = req.body;
+
+    try{
+      await Client.update({
+        isOverdue: true
+      }, {
+        where:{
+        clientNumber
+        }
+      })
+      res.status(200).send('status updated');
+  
+    }catch(e){
+      console.log(e);
+      res.status(400).send('error');
+  
+    }
+   
+
+}
+
+
+
+const overdueStatusToFalse = async(req, res) => {
+    
+    const {clientNumber} = req.body;
+
+    try{
+      await Client.update({
+        isOverdue: false
+      }, {
+        where:{
+        clientNumber
+        }
+      })
+      res.status(200).send('status updated');
+  
+    }catch(e){
+      console.log(e);
+      res.status(400).send('error');
+  
+    }
+}
 
 
 
@@ -64,4 +109,4 @@ async function generateClientId(){
 }   
 
 
-module.exports = {createClient, getClientByNumber}
+module.exports = {createClient, getClientByNumber, overdueStatusToFalse, overdueStatusToTrue}
