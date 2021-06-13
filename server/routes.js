@@ -12,7 +12,7 @@ router.post('/createClient', clienController.createClient);
 router.get('/getClient/:clientNumber', clienController.getClientByNumber);
 router.post('/overdueStatusToTrue', clienController.overdueStatusToTrue);
 router.post('/overdueStatusToFalse', clienController.overdueStatusToFalse);
-
+router.get('/getClients', clienController.getClients);
 
 
 router.post('/createAccount', bankAccountController.createBankAccount)

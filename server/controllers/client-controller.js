@@ -6,6 +6,16 @@ const User = require('../database/models/User')
 const Client = require('../database/models/Client');
 
 
+const getClients = async(req, res) => {
+  const result = await Client.findAll({
+    
+      attributes: ['clientNumber', 'fullname', 'isOverdue']
+    
+  });
+  res.status(200).send(result);
+
+}
+
 const getClientByNumber = async(req, res) =>{
     clientNumber = req.params.clientNumber;
     const result = await Client.findByPk(clientNumber);
@@ -109,4 +119,4 @@ async function generateClientId(){
 }   
 
 
-module.exports = {createClient, getClientByNumber, overdueStatusToFalse, overdueStatusToTrue}
+module.exports = {createClient, getClientByNumber, overdueStatusToFalse, overdueStatusToTrue, getClients}
