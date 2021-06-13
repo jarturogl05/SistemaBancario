@@ -1,7 +1,7 @@
 export interface Client {
-    name?:string;
-    numClient:number;
+    fullname?:string;
+    clientNumber:number;
     address?:string;
-    paymentStatus?: boolean;
+    isOverdue?: boolean;
 
 }

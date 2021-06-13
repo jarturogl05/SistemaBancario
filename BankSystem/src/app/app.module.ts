@@ -22,6 +22,7 @@ import { CashierWithdrawalComponent } from './pages/cashier-withdrawal/cashier-w
 import { CashierSearchClientComponent } from './components/cashier-search-client/cashier-search-client.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
     ErrorTailorModule.forRoot({

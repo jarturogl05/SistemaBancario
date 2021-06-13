@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ClientsService } from './../../services/clients.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { Client } from 'src/interfaces/Client';
 
 @Component({
@@ -8,17 +9,14 @@ import { Client } from 'src/interfaces/Client';
 })
 export class ManagerClientListComponent implements OnInit {
 
-  clientList: Client[] = [
-    {name: "jose Arturo Garcia Lopez", numClient: 20202020},
-    {name: "ivonne Garcia Lopez", numClient: 20203420},
-    {name: "Kassandra Garcia Lopez", numClient: 23202020}
-
-
-  ]
+  @Input()
+  clientList:any = [];
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }

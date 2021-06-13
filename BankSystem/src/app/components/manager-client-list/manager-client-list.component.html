@@ -9,8 +9,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let client of clientList">
-                <td class="border px-20 py-6">{{client.numClient}}</td>
-                <td class="border px-20 py-6">{{client.name}}</td>
+                <td class="border px-20 py-6">{{client.clientNumber}}</td>
+                <td class="border px-20 py-6">{{client.fullname}}</td>
                 <td class="border  px-20 py-6">
                     <a routerLink="/AddBankaccount"  class="tablebtn bg-green-500 ">New Account</a>  
                 </td>
