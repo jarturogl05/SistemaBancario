@@ -1,0 +1,15 @@
+<form [formGroup]="newLoginForm" (submit)="send()" class="p-10 " >
+    <div class="mt-5">
+        <label class="formLabel mb-5" for="clientId">Client id</label>
+        <input type="text" id="clientId" formControlName="clientId" class="block w-full p-2 border rounded border-gray-500">
+    </div>
+
+    <div class="mt-5">
+        <label class="formLabel mb-5" for="password">Password</label>
+        <input type="password" id="password" formControlName="password" class="block w-full p-2 border rounded border-gray-500">
+    </div>
+
+    <div class="mt-16">
+        <button type="submit" class="btn bg-green-500 w-full hover:bg-green-700">Send</button>
+    </div>
+</form>
