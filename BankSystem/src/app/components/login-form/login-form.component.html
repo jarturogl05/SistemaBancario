@@ -1,15 +1,56 @@
-<form [formGroup]="newLoginForm" (submit)="send()" class="p-10 " >
-    <div class="mt-5">
-        <label class="formLabel mb-5" for="clientId">Client id</label>
-        <input type="text" id="clientId" formControlName="clientId" class="block w-full p-2 border rounded border-gray-500">
-    </div>
+<form [formGroup]="newLoginForm" (submit)="send()" errorTailor class="p-10">
+  <div class="mt-5">
+    <label class="formLabel mb-5" for="clientId">Client id</label>
+    <input
+      type="text"
+      id="clientId"
+      formControlName="clientId"
+      class="block w-full p-2 border rounded border-gray-500"
+      [controlErrorsTpl]="messageClientIdError"
 
-    <div class="mt-5">
-        <label class="formLabel mb-5" for="password">Password</label>
-        <input type="password" id="password" formControlName="password" class="block w-full p-2 border rounded border-gray-500">
-    </div>
+    />
+  </div>
 
-    <div class="mt-16">
-        <button type="submit" class="btn bg-green-500 w-full hover:bg-green-700">Send</button>
-    </div>
+  <div class="mt-5">
+    <label class="formLabel mb-5" for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      formControlName="password"
+      class="block w-full p-2 border rounded border-gray-500"
+      [controlErrorsTpl]="messagePasswordError"
+
+    />
+  </div>
+
+  <div class="mt-16">
+    <button type="submit" class="btn bg-green-500 w-full hover:bg-green-700">
+      Send
+    </button>
+  </div>
 </form>
+
+
+<ng-template let-error let-text="text" #messageClientIdError>
+    <b>Error:</b>
+
+    <div *ngIf="error?.required">
+        <i>The Client id is empty </i>
+    </div>
+    
+    <div *ngIf="error?.minlength">
+        <i>The Client id doesn't meet the requirements </i>
+    </div>
+</ng-template>
+
+<ng-template let-error let-text="text" #messagePasswordError>
+    <b >Error:</b>
+
+    <div *ngIf="error?.required">
+        <i>The Client id is empty </i>
+    </div>
+
+    <div *ngIf="error?.minlength">
+        <i>The Password doesn't meet the requirements </i>
+    </div>
+</ng-template>

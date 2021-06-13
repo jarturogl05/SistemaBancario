@@ -28,3 +28,11 @@
 .formLabel{
   @apply text-2xl pr-24 font-semibold block w-1/3
 }
+
+input.ng-invalid.ng-touched{
+  @apply border-red-600 border-4
+}
+
+input.ng-valid{
+  @apply border-green-600 border-4
+}
