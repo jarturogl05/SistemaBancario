@@ -1,4 +1,3 @@
-import { ClientsService } from './../../services/clients.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Client } from 'src/interfaces/Client';
 

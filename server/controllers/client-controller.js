@@ -1,6 +1,7 @@
 const sequelize = require('../database/db');
 const ID = require("nodejs-unique-numeric-id-generator")
 const bcrypt = require('bcryptjs');
+const { Op } = require("sequelize");
 
 const User = require('../database/models/User')
 const Client = require('../database/models/Client');
@@ -18,9 +19,15 @@ const getClients = async(req, res) => {
 
 const getClientByNumber = async(req, res) =>{
     clientNumber = req.params.clientNumber;
-    const result = await Client.findByPk(clientNumber);
+    const result = await Client.findAll({
+      where:{
+        clientNumber: {[Op.like]: '%' + clientNumber + '%'}
+      },
+      attributes: ['clientNumber', 'fullname', 'isOverdue']
+
+    });
     if(result){
-        res.status(200).send({client: result})
+        res.status(200).send(result)
 
     }else{
         res.status(404).send('not found')

@@ -7,7 +7,7 @@
       <option value="id">Search by client id</option>
       <option value="name">Search by name</option>
     </select> -->
-    <input type="search" id="client" class="ipt" formControlName="query"/>
+    <input type="search" id="client" class="ipt" [(ngModel)]="searchQuery" formControlName="query"/>
 
     <button type="submit" class="btn bg-blue-500 hover:bg-blue-700 mr-5">
       Search

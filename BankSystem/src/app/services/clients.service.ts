@@ -11,4 +11,8 @@ export class ClientsService {
   public get(url:string){
     return this.http.get(url);
   }
+
+  public getByid(url:string, param:string){
+    return this.http.get(url + param);
+  }
 }

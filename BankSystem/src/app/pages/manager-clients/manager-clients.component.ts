@@ -24,7 +24,10 @@ export class ManagerClientsComponent implements OnInit {
     })
   }
 
-  public searchClient(clientList:any){
-    this.clientList = clientList
+  public searchClient(query:string){
+    this.ClientsService.getByid('http://localhost:8000/getClient/', query).subscribe(response =>{
+      console.log(response)  
+      this.clientList = response
+    })
   }
 }

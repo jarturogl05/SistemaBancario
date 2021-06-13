@@ -1,6 +1,6 @@
 import { Client } from 'src/interfaces/Client';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-search-client',
@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class SearchClientComponent implements OnInit {
 
   public searchForm!:FormGroup
+  searchQuery!:string
 
   @Output()
   OnSearchClient: EventEmitter<any> = new EventEmitter();
@@ -18,13 +19,12 @@ export class SearchClientComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchForm = this.formBuilder.group({
-      
+      query:['', Validators.required]
     })
   }
 
   send():any{
-    console.log(this.searchForm.value)
-    this.OnSearchClient.emit([]);
+    this.OnSearchClient.emit(this.searchQuery);
   }
 
 
