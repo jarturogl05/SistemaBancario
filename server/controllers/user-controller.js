@@ -21,6 +21,33 @@ const login = async(req, res) => {
      
 }
 
+const createAdmin = async(req, res) => {
+
+     const hash = await bcrypt.hash('pass1234', 2);
+
+     await User.create({
+          userid:  '123456789',
+          password: hash,
+          role: 'admin'
+      }
+      )
+
+      res.status(200).send(User.userid)
+}
+
+const createCashier = async(req, res) => {
+
+     const hash = await bcrypt.hash('pass1234', 2);
+
+     await User.create({
+          userid: '987654321',
+          password: hash,
+          role: 'cashier'
+      }
+      )
+      
+      res.status(200).send(User.userid)
+}
 
 
-module.exports = {login}
+module.exports = {login, createAdmin, createCashier}

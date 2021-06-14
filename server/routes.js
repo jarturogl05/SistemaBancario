@@ -6,7 +6,9 @@ const clienController = require('./controllers/client-controller');
 const bankAccountController = require('./controllers/bankAccount-controller');
 const movementController = require('./controllers/movement-controller');
 
-router.post('/login', userController.login)
+router.post('/login', userController.login);
+router.post('/createAdmin', userController.createAdmin);
+router.post('/createCashier', userController.createCashier);
 
 router.post('/createClient', clienController.createClient);
 router.get('/getClient/:clientNumber', clienController.getClientByNumber);
