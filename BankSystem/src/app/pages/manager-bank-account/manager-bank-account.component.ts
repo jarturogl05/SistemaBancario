@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagerBankAccountComponent implements OnInit {
 
+  data:any = {}
+
   constructor() { }
 
   ngOnInit(): void {
+    this.data= history.state.data
   }
 
+  addNewAccount(data:any){
+    console.log(data)
+  }
 }

@@ -1,19 +1,19 @@
 <div class="my-20 text-2xl max-w-5xl flex flex-col">
-    <form >
+    <form [formGroup]="newAccountForm" (submit)="send()">
 
         <div class="flex items-center mb-8">
             <label class="formLabel" >Name</label>
-            <label class="formLabel" >Jose arturo garcia</label>
+            <label class="formLabel" >{{clientData.fullname}}</label>
         </div>
 
         <div class="flex items-center mb-8">
             <label class="formLabel" >Client Num</label>
-            <label class="formLabel" >9999999</label>
+            <label class="formLabel" >{{clientData.number}}</label>
         </div>
 
         <div class="flex items-center mb-8">
             <label class="formLabel" for="credit">Max credit </label>
-            <input type="number" id="credit" class="ipt w-2/3" formControlName="credit" />
+            <input type="number" id="credit" class="ipt w-2/3" formControlName="maxCredit" />
         </div>
         
         <div class=" flex justify-end py-5">

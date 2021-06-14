@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class NewClientFormComponent implements OnInit {
 
-  @Output() formData = new EventEmitter<boolean>();
+  @Output() formData = new EventEmitter();
 
 
   public newClientForm!: FormGroup;

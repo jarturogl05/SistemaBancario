@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { Client } from 'src/interfaces/Client';
 
@@ -14,8 +15,12 @@ export class ManagerClientListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
+  sendClientInfo(){
+
+  }
 
 
 }
