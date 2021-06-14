@@ -24,6 +24,7 @@ import { CashierSearchClientComponent } from './components/cashier-search-client
 import { LoginComponent } from './pages/login/login.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ClientHomeComponent } from './pages/client-home/client-home.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
     CashierWithdrawalComponent,
     CashierSearchClientComponent,
     LoginComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    ClientHomeComponent
   ],
   imports: [
     BrowserModule,
