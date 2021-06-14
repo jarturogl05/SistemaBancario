@@ -15,4 +15,8 @@ export class ClientsService {
   public getByid(url:string, param:string){
     return this.http.get(url + param);
   }
+
+  public createClient(url:string, body:any){
+    return this.http.post(url, body);
+  }
 }

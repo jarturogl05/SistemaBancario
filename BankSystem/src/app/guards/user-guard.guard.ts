@@ -16,17 +16,22 @@ export class UserGuardGuard implements CanActivate {
     
     const checkrole = this.cookieService.check('role')
     const role = this.cookieService.get('role');
-
+    console.log(checkrole)
     if(!checkrole){
-      return true;
-
+      return true      
     }else{
-
-      
-      return false;
-
+      switch(role){
+        case 'admin':
+          this.router.navigate(['/', 'admin']);
+          break;
+        case 'client':
+          this.router.navigate(['/', 'client']);
+          break;
+        case 'cashier':
+          this.router.navigate(['/', 'cashier'])
+      }
     }
-
+    return true
   }
   
 }

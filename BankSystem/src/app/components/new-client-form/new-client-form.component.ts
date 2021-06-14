@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class NewClientFormComponent implements OnInit {
 
-  @Output() formStatus = new EventEmitter<boolean>();
+  @Output() formData = new EventEmitter<boolean>();
 
 
   public newClientForm!: FormGroup;
@@ -17,14 +17,13 @@ export class NewClientFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.newClientForm = this.formBuilder.group({
-      name:['', Validators.required],
+      fullname:['', Validators.required],
       address: ['', Validators.required],
       password:['', Validators.required]
     })
   }
 
   send():any {
-    console.log(this.newClientForm);
-    this.formStatus.emit(this.newClientForm.valid);
+    this.formData.emit(this.newClientForm.value);
   }
 }
