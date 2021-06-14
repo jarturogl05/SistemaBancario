@@ -1,3 +1,4 @@
+import { AccountService } from './../../services/account.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,13 +10,15 @@ export class ManagerBankAccountComponent implements OnInit {
 
   data:any = {}
 
-  constructor() { }
+  constructor(private accountService:AccountService) { }
 
   ngOnInit(): void {
     this.data= history.state.data
   }
 
   addNewAccount(data:any){
-    console.log(data)
+    this.accountService.createAccount('http://localhost:8000/createAccount', data).subscribe( (response:any) =>{
+      console.log(response);
+    })
   }
 }

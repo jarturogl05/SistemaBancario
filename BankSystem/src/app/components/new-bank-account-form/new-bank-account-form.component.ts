@@ -27,12 +27,12 @@ export class NewBankAccountFormComponent implements OnInit {
 
   send(){
 
-    const clientNumber = this.clientData.number
+    const clientClientNumber = this.clientData.number
     
-    const credit = this.newAccountForm.value.maxCredit
+    const maxCredit = this.newAccountForm.value.maxCredit
 
 
-    this.formData.emit({clientNumber, credit});
+    this.formData.emit({clientClientNumber, maxCredit});
 
   }
 
