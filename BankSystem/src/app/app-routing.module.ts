@@ -1,3 +1,4 @@
+import { ManagerHomeComponent } from './pages/manager-home/manager-home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CashierWithdrawalComponent } from './pages/cashier-withdrawal/cashier-withdrawal.component';
 import { ManagerBankAccountComponent } from './pages/manager-bank-account/manager-bank-account.component';
@@ -10,11 +11,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  {path: 'addClient', component: NewClientComponent},
-  {path: 'ManagerClients', component: ManagerClientsComponent},
-  {path: 'AddBankaccount', component: ManagerBankAccountComponent},
-  {path: 'Reports', component: ReportsComponent},
-  {path: 'Config', component: ConfigComponent},
+  {path: 'admin', component: ManagerHomeComponent, children:[
+    {path: 'ManagerClients', component: ManagerClientsComponent},
+    {path: 'AddBankaccount', component: ManagerBankAccountComponent},
+    {path: 'addClient', component: NewClientComponent},
+    {path: 'Reports', component: ReportsComponent},
+    {path: 'Config', component: ConfigComponent}
+  ]},
+  
   {path: 'Withdrawal', component: CashierWithdrawalComponent},
   {path: 'login', component: LoginComponent}
 

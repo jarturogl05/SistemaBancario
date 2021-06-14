@@ -3,7 +3,7 @@
         <div class="text-center mb-8">
             <h1 class="font-normal text-4xl">Login to Bank</h1>
         </div>
-        <app-login-form></app-login-form>
+        <app-login-form (OnLogin)="doLogin($event)"></app-login-form>
     </div>
   </div>
 
