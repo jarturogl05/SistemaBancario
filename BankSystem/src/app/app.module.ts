@@ -25,6 +25,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ClientHomeComponent } from './pages/client-home/client-home.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { ClientHomeComponent } from './pages/client-home/client-home.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     ErrorTailorModule.forRoot({
