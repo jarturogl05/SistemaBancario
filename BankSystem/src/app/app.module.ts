@@ -28,6 +28,7 @@ import { ClientHomeComponent } from './pages/client-home/client-home.component';
 import { FormsModule } from '@angular/forms';
 import { LatePaymetReportComponent } from './components/late-paymet-report/late-paymet-report.component';
 import { ReportsFormComponent } from './components/reports-form/reports-form.component';
+import { LatepaymentReportTableComponent } from './components/latepayment-report-table/latepayment-report-table.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { ReportsFormComponent } from './components/reports-form/reports-form.com
     LoginFormComponent,
     ClientHomeComponent,
     LatePaymetReportComponent,
-    ReportsFormComponent
+    ReportsFormComponent,
+    LatepaymentReportTableComponent
   ],
   imports: [
     BrowserModule,
