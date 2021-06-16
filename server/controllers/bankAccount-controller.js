@@ -20,7 +20,7 @@ const getAccountsByClientNum = async (req, res) =>{
   clientNumber = req.params.clientNumber;
 
   const result = await BankAccount.findAll({
-    attributes:['bankAccountNumber', 'maxCredit', 'currentCredit', 'hasLatePayment', 'clientClientNumber'],
+    attributes:['bankAccountNumber', 'maxCredit', 'currentCredit', 'hasLatePayment'],
     where:{
       clientClientNumber: clientNumber
     }
@@ -97,7 +97,7 @@ const latePaymentReport = async(req, res) => {
 
   const {startDate, finishDate} = req.params;
   const result = await BankAccount.findAll({
-    attributes:['bankAccountNumber', 'maxCredit', 'currentCredit', 'hasLatePayment'],
+    attributes:['bankAccountNumber', 'maxCredit', 'currentCredit', 'hasLatePayment', 'clientClientNumber'],
     where:{
       hasLatePayment:true,
       createdAt:{
