@@ -11,4 +11,8 @@ export class AccountService {
   public createAccount(url:string, body:any){
     return this.http.post(url, body);
   }
+
+  public latePaymentReport(url:string){
+    return this.http.get(url);
+  }
 }

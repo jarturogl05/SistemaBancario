@@ -1,0 +1,29 @@
+<div  class="flex mt-20 justify-start">
+    <table id="latepaymentTable" class="table-auto shadow-lg bg-white">
+        <thead>
+          <tr class="text-2xl font-light">
+            <th class="bg-blue-200 border text-left px-8 py-4">Account number</th>
+            <th class="bg-blue-200 border text-left px-8 py-4">Client Number</th>
+            <th class="bg-blue-200 border text-left px-8 py-4">Current Credit</th>
+            <th class="bg-blue-200 border text-left px-8 py-4">maxCredit</th>
+
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let account of data">
+            <td class="border px-20 py-6">{{account.bankAccountNumber}}</td>
+            <td class="border px-20 py-6">{{account.clientClientNumber}}</td>
+
+            <td class="border px-20 py-6">{{account.currentCredit}}</td>
+            <td class="border px-20 py-6">{{account.maxCredit}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div>
+        <button class="btn bg-indigo-600 ml-10 " (click)='print()'>
+            Print Report
+        </button>
+      </div>
+
+</div>

@@ -1,14 +1,14 @@
-<form  >
-    <div class="flex content-center justify-between flex-col lg:flex-row" >
+<form [formGroup]="newReportForm" (submit)="send()" >
+    <div class="flex content-center justify-evenly flex-col lg:flex-row" >
 
         <div class="flex ">
-            <label class="text-2xl pr-10 font-semibold block" for="name">Start date</label>
-            <input type="date" id="name" class="ipt " formControlName="startDate" />
+            <label class="text-2xl pr-10 font-semibold block" for="startDate">Start date</label>
+            <input type="date" id="startDate" class="ipt " formControlName="startDate" />
         </div>
     
         <div class="flex">
-            <label class="text-2xl pr-10 font-semibold block" for="name">end date</label>
-            <input type="date" id="name" class="ipt " formControlName="endDate" />
+            <label class="text-2xl pr-10 font-semibold block" for="endDate">end date</label>
+            <input type="date" id="endDate" class="ipt " formControlName="endDate" />
         </div>
     
     
@@ -17,8 +17,9 @@
                 Generate Report
             </button>
         </div>
-    
-
     </div>
-    
 </form>
+
+<div *ngIf="renderData" >
+    <app-latepayment-report-table [data]='latePaymentData'></app-latepayment-report-table>
+</div>
