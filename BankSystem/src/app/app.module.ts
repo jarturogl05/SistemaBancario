@@ -26,6 +26,8 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { HttpClientModule } from '@angular/common/http';
 import { ClientHomeComponent } from './pages/client-home/client-home.component';
 import { FormsModule } from '@angular/forms';
+import { LatePaymetReportComponent } from './components/late-paymet-report/late-paymet-report.component';
+import { ReportsFormComponent } from './components/reports-form/reports-form.component';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { FormsModule } from '@angular/forms';
     CashierSearchClientComponent,
     LoginComponent,
     LoginFormComponent,
-    ClientHomeComponent
+    ClientHomeComponent,
+    LatePaymetReportComponent,
+    ReportsFormComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@
 
 <div class="mt-20">
     <label class="text-2xl pr-24 font-semibold" for="ReportType"
-    >Search Client</label>
+    >Select report type</label>
   <select [(ngModel)]="reportTypeModel" name="ReportType" id="ReportType" (change)="check(reportTypeModel)"  class="border border-gray-400 w-2/3">
     <option disabled  value> -- select an option -- </option>
     <option value="latePayment">Late payment Report</option>
@@ -10,8 +10,8 @@
   </select>
 </div>
 
-<div *ngIf="reportType==='latePayment'" >
-    <h1>a</h1>
+<div *ngIf="reportType==='latePayment'" class="mt-14">
+    <app-late-paymet-report> </app-late-paymet-report>
 </div>
 
 <div *ngIf="reportType==='movements'" >
