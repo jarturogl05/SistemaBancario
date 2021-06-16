@@ -20,7 +20,7 @@ const getAccountsByClientNum = async (req, res) =>{
   clientNumber = req.params.clientNumber;
 
   const result = await BankAccount.findAll({
-    attributes:['bankAccountNumber', 'maxCredit', 'currentCredit', 'hasLatePayment'],
+    attributes:['bankAccountNumber', 'maxCredit', 'currentCredit', 'hasLatePayment', 'clientClientNumber'],
     where:{
       clientClientNumber: clientNumber
     }
